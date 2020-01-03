@@ -1,0 +1,21 @@
+<div class="booyah-box col-10 offset-1">
+  <h1 class="text-center">All Available Bundles</h1>
+  <hr />
+
+  <% @bundles.each do |bundle| %>
+  <h2 class="text-center">
+    <%= link_to bundle.title, bundle_path(bundle) %>
+  </h2>
+  <br />
+    <div class="row">
+      <div class="col-sm-8 col-12">
+        <%= bundle.description %>
+      </div>
+      <div class="col-sm-4 col-12 text-center">
+        <%= link_to 'See Details', bundle_path(bundle), class: 'btn btn-primary btn-large' %>
+      </div>
+    </div>
+    <br class="clr" />
+
+  <% end %>
+</div>

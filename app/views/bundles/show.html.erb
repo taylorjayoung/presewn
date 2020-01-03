@@ -1,0 +1,24 @@
+<br />
+
+<div class="booyah-box col-10 offset-1">
+  <h1><%= @bundle.title %></h1>
+  <br />
+  <div class="row">
+
+    <div class="col-sm-4 col-12 text-center">
+      <span class="badge badge-default">
+        <%= number_to_currency @bundle.cost %>
+      </span>
+
+      <% if current_user && current_user == @bundle.user %>
+        <br />
+        <br />
+        <%= link_to 'Edit Listing', seller_bundle_path(@bundle), class: 'btn btn-danger btn-large' %>
+      <% end %>
+    </div>
+
+    <div class="col-sm-8 col-12">
+      <%= @bundle.description %>
+    </div>
+  </div>
+</div>
