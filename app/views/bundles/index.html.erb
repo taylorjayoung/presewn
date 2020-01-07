@@ -5,9 +5,14 @@
   <% @bundles.each do |bundle| %>
   <h2 class="text-center">
     <%= link_to bundle.title, bundle_path(bundle) %>
+
   </h2>
   <br />
     <div class="row">
+      <% if bundle.cover_photo.url  %>
+        <%= image_tag bundle.cover_photo.url, class: 'img-fluid' %>
+      <% end %>
+
       <div class="col-sm-8 col-12">
         <%= bundle.description %>
       </div>

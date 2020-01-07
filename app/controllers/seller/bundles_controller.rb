@@ -24,6 +24,6 @@ class Seller::BundlesController < ApplicationController
   private
 
   def bundle_params
-    params.require(:bundle).permit(:title, :description, :cost)
+    params.require(:bundle).permit(:title, :description, :cost, :cover_photo)
   end
 end

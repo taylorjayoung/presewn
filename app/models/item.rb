@@ -1,5 +1,6 @@
 class Item < ApplicationRecord
+  mount_uploaders :images, ImagesUploader
+
   belongs_to :bundle
-  belongs_to :user, through: :bundle
 
 end

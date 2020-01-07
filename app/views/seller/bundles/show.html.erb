@@ -1,4 +1,21 @@
 <br />
 <div class="booyah-box col-10 offset-1">
   <h1 class="text-center"><%= @bundle.title %></h1>
+  <% if @bundle.cover_photo.url  %>
+    <%= image_tag @bundle.cover_photo.url, class: 'img-fluid' %>
+  <% end %>
+  <br />
+  <%= link_to 'Preview As Buyer...', bundle_path(@bundle), class: 'btn btn-warning float-right' %>
+  <br class="clr" />
+  <div class="text-center">
+    <%= link_to 'Add an item...', new_seller_bundle_item_path(@bundle), class: 'btn btn-primary btn-lg' %>
+  </div>
+
+    <ul>
+    <% @bundle.items.each do |item| %>
+      <li>
+        <%= item.title %>
+      </li>
+    <% end %>
+  </ul>
 </div>

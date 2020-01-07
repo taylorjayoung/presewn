@@ -2,6 +2,9 @@
 
 <div class="booyah-box col-10 offset-1">
   <h1><%= @bundle.title %></h1>
+  <% if @bundle.cover_photo.url  %>
+    <%= image_tag @bundle.cover_photo.url, class: 'img-fluid' %>
+  <% end %>
   <br />
   <div class="row">
 
@@ -20,5 +23,15 @@
     <div class="col-sm-8 col-12">
       <%= @bundle.description %>
     </div>
+  </div>
+  <div class="col-12">
+    <% @bundle.items.each do |item| %>
+      <div class="section">
+        <%= item.title %>
+        <% if item.images.size > 0 %>
+          <%= image_tag item.images.first.url, class: 'img-fluid' %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>

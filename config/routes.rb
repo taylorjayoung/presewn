@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :bundles, only: [:index, :show]
 
   namespace :seller do
-    resources :bundles, only: [:new, :create, :show]
+    resources :bundles, only: [:new, :create, :show] do
+      resources :items, only: [:new, :create]
+    end
   end
 end
