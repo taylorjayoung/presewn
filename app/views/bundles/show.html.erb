@@ -7,7 +7,6 @@
   <% end %>
   <br />
   <div class="row">
-
     <div class="col-sm-4 col-12 text-center">
       <span class="badge badge-default">
         <%= number_to_currency @bundle.cost %>
@@ -24,13 +23,17 @@
       <%= @bundle.description %>
     </div>
   </div>
+
   <div class="col-12">
     <% @bundle.items.each do |item| %>
-      <div class="section">
+      <br /><br />
+      <div class="item">
         <%= item.title %>
         <% if item.images.size > 0 %>
           <%= image_tag item.images.first.url, class: 'img-fluid' %>
         <% end %>
+        <br class="clr" />
+
       </div>
     <% end %>
   </div>
