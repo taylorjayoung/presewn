@@ -6,7 +6,6 @@
     <%= f.input :description %>
     <%= f.input :cost %>
     <%= f.input :cover_photo %>
-    <%= f.input :gender, as: :radio_buttons, collection: [['0', 'female'], ['1', 'male']], label_method: :second, value_method: :first %>
     <br />
     <%= f.submit "Create", class: 'btn btn-primary' %>
     <br />

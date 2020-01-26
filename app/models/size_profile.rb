@@ -1,0 +1,2 @@
+class SizeProfile < ApplicationRecord
+end
