@@ -3,9 +3,12 @@
   <h1>Add a new item</h1>
   <%= simple_form_for @item, url: seller_bundle_items_path(current_bundle) do |f| %>
     <br />
-    <%= f.input :title %>
-    <%= f.file_field :images, multiple: true %>
+    <%= f.association :group %>
+    <%= content_tag :div, class: 'js-dependent-fields', data: { 'select-id': 'group', 'option-value': 'baby'} do %>
+      <%= f.input :title %>
+    <% end %>
 
+    <%= f.file_field :images, multiple: true %>
     <br />
     <br />
     <%= f.submit "Add an item" %>

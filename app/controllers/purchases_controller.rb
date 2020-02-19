@@ -7,7 +7,7 @@ class PurchasesController < ApplicationController
 
 
     # Amount in cents
-    @amount = (current_course.cost * 100).to_i
+    @amount = (current_bundle.cost * 100).to_i
 
     customer = Stripe::Customer.create(
       email: params[:stripeEmail],

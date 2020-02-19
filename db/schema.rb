@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_26_230927) do
+ActiveRecord::Schema.define(version: 2020_02_19_022249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,16 +27,34 @@ ActiveRecord::Schema.define(version: 2020_01_26_230927) do
     t.index ["user_id"], name: "index_bundles_on_user_id"
   end
 
+  create_table "carts", force: :cascade do |t|
+  end
+
+  create_table "carts_items", force: :cascade do |t|
+    t.integer "cart_id"
+    t.integer "bundle_id"
+  end
+
   create_table "groups", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "groups_item_types", force: :cascade do |t|
+    t.integer "group_id"
+    t.integer "item_type_id"
+  end
+
   create_table "item_types", force: :cascade do |t|
     t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "item_types_sizes", force: :cascade do |t|
+    t.integer "size_profile_id"
+    t.integer "item_type_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -48,6 +66,7 @@ ActiveRecord::Schema.define(version: 2020_01_26_230927) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.json "images"
+    t.integer "group_id"
   end
 
   create_table "purchases", force: :cascade do |t|

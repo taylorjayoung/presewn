@@ -42,9 +42,10 @@ gem 'simple_form'
 gem 'devise'
 gem 'carrierwave', '~> 2.0'
 gem 'stripe'
-
+gem 'dependent-fields-rails'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'underscore-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

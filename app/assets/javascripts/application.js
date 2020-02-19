@@ -14,6 +14,12 @@
 //= require activestorage
 //= require turbolinks
 //= require jquery3
+//= require underscore
+//= require dependent-fields
 //= require popper
 //= require bootstrap-sprockets
 //= require_tree .
+
+$(document).ready(function() {
+    DependentFields.bind()
+});
